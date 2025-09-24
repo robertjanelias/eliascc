@@ -1,0 +1,97 @@
+﻿/*
+  Click and drag to attract
+  Right click to repulse
+  Mouse-wheel click to create a time dilation field
+  Use the Controls to decrease or increase
+  the particle count to tweak performance.
+*/
+
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: black;
+
+canvas {
+    display: block;
+    cursor: crosshair;
+}
+
+}
+
+@keyframes fadeToNearBlack {
+    to {
+        background: rgba(0, 0, 0, 0.9);
+    }
+}
+
+@keyframes goBig {
+    to {
+        opacity: 1;
+    }
+}
+
+dialog img {
+    width: 100%;
+    height: auto;
+}
+
+dialog {
+    border: none;
+    opacity: 0;
+}
+
+dialog[open] {
+    animation: goBig 1s .4s forwards;
+    width: 70%;
+    margin: auto;
+    position: absolute;
+    max-width: 700px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+dialog[open]::backdrop {
+    animation: fadeToNearBlack 1s forwards;
+}
+
+.backdrop {
+    animation: fadeToNearBlack 1s forwards;
+}
+
+dialog button {
+    display: inline-block;
+    padding: 0.3em 1.2em;
+    margin: 0 0.3em 0.3em 0;
+    border-radius: 2em;
+    border: none;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    color: #FFFFFF;
+    background-color: #4eb5f1;
+    text-align: center;
+    transition: all 0.2s;
+    width: 10%;
+}
+
+button:hover {
+    background-color: #4095c6;
+}
+
+button:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+@media all and (max-width: 30em) {
+    button {
+        display: block;
+        margin: 0.2em auto;
+    }
+}
